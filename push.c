@@ -6,7 +6,7 @@
 /*   By: aelabid <aelabid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 17:34:42 by aelabid           #+#    #+#             */
-/*   Updated: 2022/03/05 16:45:02 by aelabid          ###   ########.fr       */
+/*   Updated: 2022/03/14 13:00:24 by aelabid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,3 @@ void	push(t_stack **stack_a, t_stack **stack_b, char ab)
 		(*stack_a) = aux -> next;
 	}
 }
-

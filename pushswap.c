@@ -6,7 +6,7 @@
 /*   By: aelabid <aelabid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 09:04:50 by aelabid           #+#    #+#             */
-/*   Updated: 2022/03/10 14:23:45 by aelabid          ###   ########.fr       */
+/*   Updated: 2022/03/14 12:54:55 by aelabid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ int	main(int ac, char **av)
 {
 	if (ac > 1)
 	{
+		av = convert(&ac, av);
+		if (ac == 1)
+			return (0);
 		checkalpha(av);
 		checkdouble(ac, av);
 		checkmaxint(av);
@@ -28,22 +31,22 @@ int	main(int ac, char **av)
 		//int	num;
 		
 		stacka = fillstack(av);
-		 int k = 0;
+		int k = 0;
 		// int *tab;
 		
 		// stacka.content = 1;
 		//largest(stacka, ac, &num);
-		int *tab = largest(stacka, ac, &len_ac.i);
+		int *tab = largest2(stacka, ac, &len_ac.i);
 		
-		// if (len_ac.i == ac - 1)
-		// {
-		// 	printf("hello mretteb hadchi");
-		// 	return(0);
-		// }
+		if (len_ac.i == ac - 1)
+		{
+			push_elem_in_head(&stacka, minelem(stacka), 'a');
+			return(0);
+		}
 		pushtop(&stackb, &stacka, tab, len_ac);
 		// void	pushtop(t_stack **stack_b,  t_stack **stack_a, int *tab, t_ij len_ac);
-		 pushtoa(&stacka, &stackb);
-		// push_elem_in_head(&stacka, minelem(stacka), 'a');
+		pushtoa(&stacka, &stackb);
+		push_elem_in_head(&stacka, minelem(stacka), 'a');
 		//test(&stacka, tab, num);
 		// int arr[]= {1, 5 ,7, 8, 5 , 7};
 		// // printf("%lu", sizeof(arr));
@@ -73,9 +76,9 @@ int	main(int ac, char **av)
 		//  printf("\n");
 		// printf("\n");
 		t_stack *temp;
-		// temp = stacka;
-		// printf("\n");
-		// printf("\n");
+		 temp = stacka;
+		// // printf("\n");
+		// // printf("\n");
 		// while (1)
 		// {
 		// 	printf("%d\t",stacka -> content);

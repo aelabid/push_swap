@@ -6,7 +6,7 @@
 /*   By: aelabid <aelabid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 04:28:05 by aelabid           #+#    #+#             */
-/*   Updated: 2022/03/08 17:55:19 by aelabid          ###   ########.fr       */
+/*   Updated: 2022/03/11 20:27:22 by aelabid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void    pushtop(t_stack **stack_b,  t_stack **stack_a, int *tab, t_ij len_ac)
 		{
 			if (ifintab(tab, (temp) -> content, len_ac.i) == 0)
 			{
+				// printf("hello");
 				push_elem_in_head(stack_a, (temp) -> content, 'a');
 				push(stack_a, stack_b, 'b');
 				temp = *stack_a;

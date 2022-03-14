@@ -6,12 +6,13 @@
 #    By: aelabid <aelabid@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/21 09:05:52 by aelabid           #+#    #+#              #
-#    Updated: 2022/03/10 12:51:42 by aelabid          ###   ########.fr        #
+#    Updated: 2022/03/11 20:15:25 by aelabid          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = pushswap.c checkargs.c atoi.c collectdata.c pushswap_util.c swap.c push.c\
-		lst.c rotate.c reverserotate.c larg_sub.c pushtoB.c pushtoa.c mininhead.c
+		lst.c rotate.c reverserotate.c larg_sub.c pushtoB.c pushtoa.c mininhead.c\
+		convert.c strjoin.c
 
 OBJ = $(SRC:.c=.o)
 

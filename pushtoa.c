@@ -6,7 +6,7 @@
 /*   By: aelabid <aelabid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 22:32:55 by aelabid           #+#    #+#             */
-/*   Updated: 2022/03/10 14:25:53 by aelabid          ###   ########.fr       */
+/*   Updated: 2022/03/10 14:36:03 by aelabid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,7 +199,10 @@ int	minmvmnt(t_stack *lst)
 	while (1)
 	{		
 		 if (temp->nbmvmnt <= min)
+		{
+			min = temp->nbmvmnt;
 			minval = temp->content;
+		}
 		temp = temp -> next;
 		if (lst == temp)
 			break ;

@@ -6,7 +6,7 @@
 /*   By: aelabid <aelabid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 09:10:51 by aelabid           #+#    #+#             */
-/*   Updated: 2022/03/08 16:04:02 by aelabid          ###   ########.fr       */
+/*   Updated: 2022/03/12 19:30:46 by aelabid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ typedef struct s_reteb
 void		error();
 int			ft_isdigit(int c);
 int			ft_strlen(const char *s);
+void		error(void);
+int			ft_strlen(const char *s);
 long long	ft_atoi(const char *c);
 void		checkalpha(char **av);
 void		checkdouble(int ac, char **av);
@@ -64,7 +66,9 @@ void    	pushtop(t_stack **stack_b,  t_stack **stack_a, int *tab, t_ij len_ac);
 void		pushtoa(t_stack **stacka, t_stack **stackb);
 int			lenstack(t_stack *temp);
 void		push_elem_in_head(t_stack **stack, int val, char ab);
+char		*ft_strjoin(int size, char **strs, char *sep);
 int			minelem(t_stack *stacka);
 int			*largest2(t_stack *stack_a, int ac, int *num);
+char		**convert(int *ac, char **av);
 int			minmvmnt(t_stack *lst);
 #endif

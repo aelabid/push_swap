@@ -6,17 +6,11 @@
 /*   By: aelabid <aelabid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 09:04:30 by aelabid           #+#    #+#             */
-/*   Updated: 2022/02/23 21:09:03 by aelabid          ###   ########.fr       */
+/*   Updated: 2022/03/12 19:58:57 by aelabid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<ctype.h>
 #include"pushswap.h"
-void	error()
-{
-	printf("Error");
-	exit(1);
-}
 
 int	ft_isdigit(int c)
 {
@@ -25,23 +19,12 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
 void	checkalpha(char **av)
 {
 	int	i;
 	int	j;
 
 	i = 1;
-
 	while (av[i])
 	{
 		if ((av[i][0] == '+') || (av[i][0] == '-'))
@@ -82,7 +65,6 @@ int	ft_strncmp(const char *s1, const char *s2)
 	return (0);
 }
 
-
 void	checkdouble(int ac, char **av)
 {
 	int	i;
@@ -105,7 +87,7 @@ void	checkdouble(int ac, char **av)
 void	checkmaxint(char **av)
 {
 	int	i;
-	
+
 	i = 1;
 	while (av[i])
 	{

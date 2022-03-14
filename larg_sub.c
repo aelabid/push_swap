@@ -6,7 +6,7 @@
 /*   By: aelabid <aelabid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 17:15:29 by aelabid           #+#    #+#             */
-/*   Updated: 2022/03/08 17:52:05 by aelabid          ###   ########.fr       */
+/*   Updated: 2022/03/14 12:54:26 by aelabid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,44 +70,23 @@ int	*largest(t_stack *stack_a, int ac, int *num)
 int	*largest2(t_stack *stack_a, int ac, int *num)
 {
 	t_stack	*temp;
-	t_stack	*tempsa;
-	t_stack	*temptmp;
-	int	largs;
-	int	largnos;
-	int	*largtabs;
-	int	*largtabnos;
+	int		largs;
+	int		largnos;
+	int		*largtabs;
+	int		*largtabnos;
+
 	temp = stack_a;
-	// tempsa = temp;
-	// printf("this is stack a\n");
-	// while (1)
-	// {
-	// 	printf("%d\t",temp -> content);
-	// 	temp= temp-> next;
-	// 	if (stack_a == temp)
-	// 		break;
-	// }
-	swap3(temp);
 	largtabnos = largest(stack_a, ac, &largnos);
-	temptmp = temp;
-	largtabs = largest(temp, ac, &largs);
-	// printf("\nthis is stack swapd\n");
-	// 	while (1)
-	// {
-	// 	printf("%d\t",temptmp -> content);
-	// 	temptmp = temptmp -> next;
-	// 	if (temptmp == temp)
-	// 		break;
-	// }
 	swap3(temp);
-	//printf("largenos = %d\n, largess = %d\n", largnos, largs);
+
+	largtabs = largest(temp, ac, &largs);
+	swap3(temp);
 	if (largnos >= largs)
 	{
-		// printf("------------------------");
 		*num = largnos;
 		return (largtabnos);
 	}
 	*num = largs;
 	swap(stack_a, 'a');
-	return(largtabs);
-	
+	return (largtabs);
 }
