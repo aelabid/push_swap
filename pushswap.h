@@ -6,7 +6,7 @@
 /*   By: aelabid <aelabid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 09:10:51 by aelabid           #+#    #+#             */
-/*   Updated: 2022/03/18 16:02:46 by aelabid          ###   ########.fr       */
+/*   Updated: 2022/03/18 18:25:47 by aelabid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
 int			count_to_head(t_stack *tmp, int elem, int *rvrt, char ab);
 void		reversrot(t_stack **stack_a, t_stack **stack_b, t_ij temp, t_ij rv);
 int			right_number(t_stack *temp, int num);
-void simple_sort(t_stack **stacka, t_stack **stackb, int ac);
-void	ft_free(char **spl);
+void		simple_sort(t_stack **stacka, t_stack **stackb);
+int			ft_strncmp(const char *s1, const char *s2);
+void		ft_free(char **spl);
 #endif

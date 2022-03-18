@@ -6,7 +6,7 @@
 /*   By: aelabid <aelabid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 19:51:48 by aelabid           #+#    #+#             */
-/*   Updated: 2022/03/18 16:09:08 by aelabid          ###   ########.fr       */
+/*   Updated: 2022/03/18 16:28:43 by aelabid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	if (!tab)
 		return (tab);
 	tab[0] = '\0';
-	i = 0;
-	while (i++ < size)
+	i = -1;
+	while (++i < size)
 	{
 		ft_strcat(tab, strs[i]);
 		if (i < (size - 1))

@@ -6,7 +6,7 @@
 #    By: aelabid <aelabid@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/21 09:05:52 by aelabid           #+#    #+#              #
-#    Updated: 2022/03/16 18:23:49 by aelabid          ###   ########.fr        #
+#    Updated: 2022/03/18 18:31:19 by aelabid          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC = pushswap.c checkargs.c atoi.c collectdata.c pushswap_util.c swap.c push.c\
 
 OBJ = $(SRC:.c=.o)
 
-# CC_FLAGS = -Wall -Wextra -Werror
+CC_FLAGS = -Wall -Wextra -Werror
 CC = gcc
 
 
@@ -26,7 +26,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC)  $(OBJ) -o $@
 	
-%.o: %.c 
+%.o: %.c pushswap.h
 	$(CC) $(CC_FLAGS) -c $<
 
 clean:
