@@ -6,7 +6,7 @@
 /*   By: aelabid <aelabid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 04:28:05 by aelabid           #+#    #+#             */
-/*   Updated: 2022/03/11 20:27:22 by aelabid          ###   ########.fr       */
+/*   Updated: 2022/03/14 14:37:11 by aelabid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,25 @@ int	ifintab(int *tab, int val, int len)
 	while (i < len)
 	{
 		if (tab[i] == val)
-			return(1);
+			return (1);
 		i++;
 	}
-	return(0);
+	return (0);
 }
+
 void	push_elem_in_head(t_stack **stack, int val, char ab)
 {
 	t_stack	*temp;
-	int	i;
-	int bl;
-	int	len;
+	int		i;
+	int		bl;
+	int		len;
 
 	len = lenstack(*stack);
-	
 	i = 0;
 	temp = *stack;
-	while ((temp) -> content != val)
+	while ((temp)->content != val)
 	{
-		temp = temp->next;
+		temp = temp -> next;
 		i++;
 	}
 	if (i > (len) / 2)
@@ -51,29 +51,27 @@ void	push_elem_in_head(t_stack **stack, int val, char ab)
 			rotate(stack, ab);
 		else
 			revrot(stack, ab);
-	}
-		
+	}	
 }
 
-void    pushtop(t_stack **stack_b,  t_stack **stack_a, int *tab, t_ij len_ac)
+void	pushtop(t_stack **stack_b, t_stack **stack_a, int *tab, t_ij len_ac)
 {
 	t_stack	*temp;
 
 	temp = *stack_a;
-		while (1)
+	while (1)
+	{
+		if (ifintab(tab, (temp)->content, len_ac.i) == 0)
 		{
-			if (ifintab(tab, (temp) -> content, len_ac.i) == 0)
-			{
-				// printf("hello");
-				push_elem_in_head(stack_a, (temp) -> content, 'a');
-				push(stack_a, stack_b, 'b');
-				temp = *stack_a;
-			}
-			else
-			{
-				temp = temp -> next;
-				if (*stack_a == temp)
-					break;
-			}
+			push_elem_in_head(stack_a, (temp)->content, 'a');
+			push(stack_a, stack_b, 'b');
+			temp = *stack_a;
 		}
+		else
+		{
+			temp = temp -> next;
+			if (*stack_a == temp)
+				break ;
+		}
+	}
 }

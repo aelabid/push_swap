@@ -6,7 +6,7 @@
 /*   By: aelabid <aelabid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 17:15:29 by aelabid           #+#    #+#             */
-/*   Updated: 2022/03/14 12:54:26 by aelabid          ###   ########.fr       */
+/*   Updated: 2022/03/18 16:07:26 by aelabid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	*check(int ac, t_stack *temp, int *z)
 	*z = 0;
 	j = 0;
 	tab = malloc(ac * sizeof(int));
+	if (!tab)
+		return (NULL);
 	large = temp -> content;
 	minlarge = temp -> content;
 	while (j < ac - 1)
@@ -76,16 +78,18 @@ int	*largest2(t_stack *stack_a, int ac, int *num)
 	int		*largtabnos;
 
 	temp = stack_a;
+	*num = 0;
 	largtabnos = largest(stack_a, ac, &largnos);
 	swap3(temp);
-
 	largtabs = largest(temp, ac, &largs);
 	swap3(temp);
 	if (largnos >= largs)
 	{
+		free(largtabs);
 		*num = largnos;
 		return (largtabnos);
 	}
+	free(largtabnos);
 	*num = largs;
 	swap(stack_a, 'a');
 	return (largtabs);

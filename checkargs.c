@@ -6,7 +6,7 @@
 /*   By: aelabid <aelabid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 09:04:30 by aelabid           #+#    #+#             */
-/*   Updated: 2022/03/12 19:58:57 by aelabid          ###   ########.fr       */
+/*   Updated: 2022/03/14 13:50:37 by aelabid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,11 @@ void	checkalpha(char **av)
 	while (av[i])
 	{
 		if ((av[i][0] == '+') || (av[i][0] == '-'))
+		{
+			if (ft_strlen(av[i]) == 1)
+				error();
 			j = 1;
+		}
 		else
 			j = 0;
 		while (j < ft_strlen(av[i]))
