@@ -6,7 +6,7 @@
 /*   By: aelabid <aelabid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 09:04:50 by aelabid           #+#    #+#             */
-/*   Updated: 2022/03/18 21:50:01 by aelabid          ###   ########.fr       */
+/*   Updated: 2022/03/23 13:08:11 by aelabid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	reteb(t_stack **stacka, t_stack **stackb, t_ij len_ac, int *tab)
 	return (0);
 }
 
-void	freeall(t_stack **stacka, char **arg)
+void	freeall(t_stack **stacka, t_stack **stackb, char **arg)
 {
 	t_stack	*emp;
 
@@ -85,6 +85,6 @@ int	main(int ac, char **av)
 		tab = largest2(stacka, ac, &len_ac.i);
 		reteb(&stacka, &stackb, len_ac, tab);
 		free(tab);
-		freeall(&stacka, arg);
+		freeall(&stacka, &stackb, arg);
 	}
 }

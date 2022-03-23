@@ -6,7 +6,7 @@
 /*   By: aelabid <aelabid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 17:34:42 by aelabid           #+#    #+#             */
-/*   Updated: 2022/03/14 17:07:04 by aelabid          ###   ########.fr       */
+/*   Updated: 2022/03/23 13:07:21 by aelabid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ void	print(char ab)
 		ft_putstr("pb\n");
 	else if (ab == 'a')
 		ft_putstr("pa\n");
+}
+
+void	freea(t_stack **stack_a)
+{
+	free(*stack_a);
+	*stack_a = NULL;
 }
 
 void	push(t_stack **stack_a, t_stack **stack_b, char ab)
@@ -40,7 +46,7 @@ void	push(t_stack **stack_a, t_stack **stack_b, char ab)
 		aux = ft_lstlast(*stack_a);
 		if (aux->next == aux)
 		{
-			(*stack_a) = NULL;
+			freea(stack_a);
 			return ;
 		}
 		aux -> next = (*stack_a)->next;
